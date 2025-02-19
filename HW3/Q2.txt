@@ -1,0 +1,2 @@
+Q2 b. We must recursively call the partition function until the entire list is split, then we 
+sort each sublist.

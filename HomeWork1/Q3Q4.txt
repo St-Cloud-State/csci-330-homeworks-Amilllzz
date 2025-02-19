@@ -1,0 +1,124 @@
+Script started on 2025-01-27 03:03:19+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="121" LINES="9"]
+[0;32m@Amilllzz [0m➜ [1;34m/workspaces/csci-330-homeworks-Amilllzz [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (car (cdr (cdr '(a b x d))))
+
+X
+* (car (car (cdr (car (cdr '(a (b (x d)))))))
+^C
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+("bogus stack frame")
+0] 0
+(car (car (cdr (car (cdr '(a (b (x d)))))))\                                            0
+^C
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+("bogus stack frame")
+0] 0
+^C
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+("bogus stack frame")
+0] 1
+
+* (car (car (cdr (car (cdr '(a (b (x d))))))) 
+^C
+debugger invoked on a SB-SYS:INTERACTIVE-INTERRUPT in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Interactive interrupt at #xF7FCF579.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [CONTINUE] Return from SB-UNIX:SIGINT.
+  1: [ABORT   ] Exit debugger, returning to top level.
+
+("bogus stack frame")
+0] 1
+
+* (car (car (cdr (car (cdr '(a (b (x d))))))))
+
+X
+* (car(car(cdr(car(cdr(car(car '((( a (b (x) d)))))))))))
+
+X
+* (cons 'a (cons 'b (cons 'x (cons 'd '()))))
+
+(A B X D)
+* (cons 'a (cons (cons 'b (cons (cons 'x (cons 'd '())) '())) '()))
+
+(A (B (X D)))
+*  (cons (cons (cons 'a (cons (cons 'b (cons (cons 'x '()) (cons 'd '()))) '())) '()) '())
+
+(((A (B (X) D))))
+* (s SB-e EXT)EXIT
+; in: SB-EXT
+;     (SB-EXT)
+; 
+; caught STYLE-WARNING:
+;   undefined function: SB-EXT
+; 
+; compilation unit finished
+;   Undefined function:
+;     SB-EXT
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNDEFINED-FUNCTION in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The function COMMON-LISP-USER::SB-EXT is undefined.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+("undefined function")
+0] 0
+
+* 
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable EXIT is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV EXIT #<NULL-LEXENV>)
+0] (SB-EXT:EXIT)
+[0;32m@Amilllzz [0m➜ [1;34m/workspaces/csci-330-homeworks-Amilllzz [0;36m([1;31mmain[0;36m) [0m$ exirt[K[Kt
+exit
+
+Script done on 2025-01-27 03:06:43+00:00 [COMMAND_EXIT_CODE="0"]

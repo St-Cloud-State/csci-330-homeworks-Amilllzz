@@ -1,0 +1,21 @@
+a. While insertion sort is in progress, we track 2 lists: the sorted items and the
+unsorted items. What should these look like when the process starts and when the
+process ends? Can we use that information to decide termination?
+When the process starts, we will have an empty list (sorted) and and full list (unsorted).
+at the end, the sorted list will be full and the unsorted will be empty. from this, we can use the
+condition that the unsorted list is not empty to recursively call the function.
+b. In each pass we start with two lists. At the end of the pass, we would have moved
+one more item from the sorted to the unsorted list. When is this process trivially
+accomplished? What will the recursive call look like?
+its done when all elements have been sorted, which should happen after the last element is reviewed.
+the recursive call will look like (if car(unsorted) !=NIL) 
+insert(car(unsorted), sorted)
+unsorted = cdr unsorted
+Moving requires an operation that can insert an item into a sorted list in ascending
+order. This can be done easily using the predefined LAST function in Common
+Lisp (look for this in the LISP text; LAST and BUTLAST are like the reverse of
+CAR and CDR). Again, to represent this insertion process, we need to track the
+items that have been examined, the item to be inserted, and the items yet to be
+examined. There are two ways in which the process can terminate – what are
+they? The process will terminate either from finding a position that the number can
+go into, or if it cant, it will be added to the end of the list.
